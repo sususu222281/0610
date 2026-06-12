@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=ZCOOL+XiaoWei&family=Fredoka:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-retro-dark: #1C2C42; /* Retro Ink Navy */
+  --color-retro-cream: #FAF6EE; /* Warm Soy Paper */
+  --color-retro-white: #FCFBF7; /* Pure Cream */
+  --color-retro-vermilion: #D94E41; /* Matte Terracotta */
+  --color-retro-vermilion-hover: #E4665A;
+  --color-retro-gold: #E5AB3A; /* Ochre Mustard */
+  --color-retro-sage: #4A8574; /* Soft Sage Green */
+  --color-retro-sage-hover: #5B9685;
+  --font-serif: "Noto Serif TC", "ZCOOL XiaoWei", serif;
+  --font-sans: "Fredoka", "Noto Sans TC", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* Retro Hand-drawn Borders & Shadows */
+.hand-drawn-card {
+  background-color: var(--color-retro-white);
+  border: 3.5px solid var(--color-retro-dark);
+  border-radius: 32px;
+  box-shadow: 6px 6px 0px 0px rgba(28, 44, 66, 0.15);
+  transition: all 0.2s ease;
+}
+
+.hand-drawn-button-primary {
+  background-color: var(--color-retro-vermilion);
+  color: var(--color-retro-cream);
+  border: 3px solid var(--color-retro-dark);
+  border-radius: 9999px;
+  font-weight: 700;
+  box-shadow: 4px 4px 0px 0px var(--color-retro-dark);
+  transition: all 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hand-drawn-button-primary:hover {
+  background-color: var(--color-retro-vermilion-hover);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px var(--color-retro-dark);
+}
+
+.hand-drawn-button-primary:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px 0px var(--color-retro-dark);
+}
+
+.hand-drawn-button-secondary {
+  background-color: var(--color-retro-gold);
+  color: var(--color-retro-dark);
+  border: 3px solid var(--color-retro-dark);
+  border-radius: 9999px;
+  font-weight: 700;
+  box-shadow: 4px 4px 0px 0px var(--color-retro-dark);
+  transition: all 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hand-drawn-button-secondary:hover {
+  filter: brightness(1.05);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px var(--color-retro-dark);
+}
+
+.hand-drawn-button-secondary:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px 0px var(--color-retro-dark);
+}
+
+/* Chunky Input Styling */
+.hand-drawn-input {
+  background-color: var(--color-retro-white);
+  border: 3px solid var(--color-retro-dark);
+  border-radius: 18px;
+  padding: 12px 16px;
+  color: var(--color-retro-dark);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.hand-drawn-input:focus {
+  outline: none;
+  border-color: var(--color-retro-vermilion);
+  box-shadow: 0px 0px 0px 3px rgba(217, 78, 65, 0.15);
+  transform: translateY(-1px);
+}
+
+/* Wobbly wiggle decorative effects */
+@keyframes softWiggle {
+  0%, 100% { transform: rotate(2deg); }
+  50% { transform: rotate(-2deg); }
+}
+
+.stamp-badge {
+  animation: softWiggle 4s ease-in-out infinite;
+}
+
+/* Organic Floating Clouds Animation */
+@keyframes floatCloud {
+  0% { transform: translateX(0px) translateY(0px); }
+  50% { transform: translateX(12px) translateY(-6px); }
+  100% { transform: translateX(0px) translateY(0px); }
+}
+
+.floating-cloud-1 {
+  animation: floatCloud 8s ease-in-out infinite;
+}
+
+.floating-cloud-2 {
+  animation: floatCloud 11s ease-in-out infinite;
+  animation-delay: 2s;
+}

@@ -1,0 +1,69 @@
+{
+  "entities": {
+    "Feedback": {
+      "title": "Feedback",
+      "description": "User test texts submitted to the Firestore database",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique record document ID"
+        },
+        "content": {
+          "type": "string",
+          "description": "The custom input content submitted by user"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Creation timestamp"
+        },
+        "authorName": {
+          "type": "string",
+          "description": "Name or handle of the submitter"
+        }
+      },
+      "required": ["content", "createdAt"]
+    },
+    "SupportMessage": {
+      "title": "SupportMessage",
+      "description": "A single chat message in the customer support log",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Message unique identifier"
+        },
+        "sessionToken": {
+          "type": "string",
+          "description": "An identifier representing the chat session or device"
+        },
+        "sender": {
+          "type": "string",
+          "enum": ["user", "bot"],
+          "description": "Sender identifier"
+        },
+        "message": {
+          "type": "string",
+          "description": "Text body of the message"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server creation timestamp"
+        }
+      },
+      "required": ["sessionToken", "sender", "message", "timestamp"]
+    }
+  },
+  "firestore": {
+    "feedbacks/{feedbackId}": {
+      "schema": "Feedback",
+      "description": "Collection of feedback messages posted by web users"
+    },
+    "support_chats/{chatId}": {
+      "schema": "SupportMessage",
+      "description": "Collection of chatbot conversations log messages"
+    }
+  }
+}

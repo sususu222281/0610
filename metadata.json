@@ -1,0 +1,6 @@
+{
+  "name": "Chinese Aesthetics Firebase Auth",
+  "description": "An interactive Customer Support Chatbot and Firestore feedback test panel with authentic Chinese custom-themed aesthetics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
